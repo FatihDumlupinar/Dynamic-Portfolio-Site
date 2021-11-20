@@ -1,5 +1,4 @@
-# Dynamic-Portfolio-Site
-# Dinamik Tanıtım Sitesi
+# Dynamic Portfolio Site 
 
 * Net Core 5
 * PostgreSQL
