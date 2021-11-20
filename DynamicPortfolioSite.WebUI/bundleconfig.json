@@ -1,0 +1,39 @@
+[
+  {
+    "outputFileName": "wwwroot/bundles/css/main.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/css/site.css",
+      "wwwroot/lib/sweetalert/sweetalert2.css",
+      "wwwroot/lib/datatables/datatables.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/css/bundle.min.css",
+    "inputFiles": [
+      "wwwroot/css/bootstrap.min.css",
+      "wwwroot/css/bootstrap-theme.min.css",
+      "wwwroot/css/fontAwesome.css",
+      "wwwroot/css/light-box.css",
+      "wwwroot/css/templatemo-main.css",
+      "wwwroot/css/fontCss.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/bundles/js/bundle.min.js",
+    "inputFiles": [
+      "wwwroot/js/jQuery v1.11.2.min.js",
+      "wwwroot/js/vendor/bootstrap.min.js",
+      "wwwroot/js/datepicker.js",
+      "wwwroot/js/plugins.js",
+      "wwwroot/js/main.js",
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  }
+]
