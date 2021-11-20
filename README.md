@@ -2,5 +2,5 @@
 
 * Net Core 5
 * PostgreSQL
-* Clean Architecture 
+* N Tier Architecture
 * Bundle & Minification (Css/Js) 
