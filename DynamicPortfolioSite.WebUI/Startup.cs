@@ -1,8 +1,14 @@
+using DynamicPortfolioSite.Repository.Contexts;
+using DynamicPortfolioSite.Repository.Repositories.Interfaces;
+using DynamicPortfolioSite.Repository.Repositories.Methods;
+using DynamicPortfolioSite.Repository.UnitOfWork.Interfaces;
+using DynamicPortfolioSite.Repository.UnitOfWork.Methods;
 using DynamicPortfolioSite.WebUI.Resources;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +30,27 @@ namespace DynamicPortfolioSite.WebUI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+               .AddDbContext<AppDbContext>(optionsAction:
+               options => options.UseNpgsql(Configuration.GetConnectionString("AppDbConnection")));
+
+            #region Repositories & UnitOfWork Dependency
+
+            services.AddTransient<IAboutRepository, AboutRepository>();
+            services.AddTransient<IProjectRepository, ProjectRepository>();
+            services.AddTransient<IProjectAndCategoryRepository, ProjectAndCategoryRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IContactRepository, ContactRepository>();
+            services.AddTransient<IBlogPostRepository, BlogPostRepository>();
+            services.AddTransient<IWorkRepository, WorkRepository>();
+            services.AddTransient<ISkillRepository, SkillRepository>();
+            services.AddTransient<IEducationRepository, EducationRepository>();
+            services.AddTransient<IAppUserRepository, AppUserRepository>();
+
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
+
+            #endregion
+
             services.AddLocalization();
 
             services.AddControllersWithViews()
@@ -38,7 +65,7 @@ namespace DynamicPortfolioSite.WebUI
                 });
 
             #region Localization Config
-            
+
             services.Configure<RequestLocalizationOptions>(
                    options =>
                    {
@@ -53,7 +80,7 @@ namespace DynamicPortfolioSite.WebUI
                        options.SupportedUICultures = supportedCultures;
 
                        options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
-                   }); 
+                   });
 
             #endregion
 
