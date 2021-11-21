@@ -1,0 +1,53 @@
+﻿
+@{ 
+    Layout = null;
+ }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> @TempData["ErrorStatusCode"]</title>
+    <link href="~/css/Errorstyle2.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <link href="~/css/errorStyle.css" rel="stylesheet" />
+    <body class="loading">
+        @if (TempData["ErrorStatusCode"] != null)
+        {
+<h1>@TempData["ErrorStatusCode"]</h1> }
+else
+{
+<h1>400</h1>}
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+<h2>@TempData["ErrorMessage"]</h2> }
+else
+{
+<h2>Bir hata ile karşılaşıldı..</h2>}
+
+        <div class="gears">
+            <div class="gear one">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="gear two">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="gear three">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <script src="~/js/jquery-1.10.2.js"></script>
+    </body>
+    <!-- partial -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

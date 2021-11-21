@@ -1,14 +1,5 @@
 [
   {
-    "outputFileName": "wwwroot/bundles/css/main.css",
-    "inputFiles": [
-      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
-      "wwwroot/css/site.css",
-      "wwwroot/lib/sweetalert/sweetalert2.css",
-      "wwwroot/lib/datatables/datatables.css"
-    ]
-  },
-  {
     "outputFileName": "wwwroot/bundles/css/bundle.min.css",
     "inputFiles": [
       "wwwroot/css/bootstrap.min.css",

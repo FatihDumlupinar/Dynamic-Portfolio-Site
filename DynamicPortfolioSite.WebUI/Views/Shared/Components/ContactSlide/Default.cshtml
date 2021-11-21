@@ -1,0 +1,44 @@
+﻿@*@model ContactModel*@
+
+<div class="col-md-6">
+    <div id="map">
+        <!-- How to change your own map point
+                1. Go to Google Maps
+                2. Click on your location point
+                3. Click "Share" and choose "Embed map" tab
+                4. Copy only URL and paste it within the src="" field below
+        -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+@*<div class="col-md-6">
+    <form id="contact" asp-action="SendMessage" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="İsminiz.." required="">
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+                <fieldset>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="E-Posta Adresiniz.." required="">
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+                <fieldset>
+                    <input asp-for="Subject" type="text" class="form-control" placeholder="Konu" required="">
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+                <fieldset>
+                    <textarea asp-for="Text" rows="6" class="form-control" placeholder="Mesajınız..." required=""></textarea>
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+                <fieldset>
+                    <button type="submit" id="form-submit" class="btn">Gönder</button>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+</div>*@

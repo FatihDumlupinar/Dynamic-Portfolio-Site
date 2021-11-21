@@ -1,0 +1,22 @@
+[
+  //template den ötürü css dosyalarýný bundle edilmiyor. Ýçeride import lar var ve tek tek düzenlemeyede üþendim. 
+  {
+    "outputFileName": "wwwroot/bundles/js/bundle.min.js",
+    "inputFiles": [
+      "wwwroot/template/vendors/bower_components/jquery/dist/jquery.min.js",
+      "wwwroot/template/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js",
+      "wwwroot/template/dist/js/jquery.slimscroll.js",
+      "wwwroot/template/vendors/bower_components/waypoints/lib/jquery.waypoints.min.js",
+      "wwwroot/template/vendors/bower_components/jquery.counterup/jquery.counterup.min.js",
+      "wwwroot/template/dist/js/dropdown-bootstrap-extended.js",
+      "wwwroot/template/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js",
+      "wwwroot/template/vendors/bower_components/switchery/dist/switchery.min.js",
+      "wwwroot/template/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js",
+      "wwwroot/template/dist/js/init.js",
+      "wwwroot/js/main.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  }
+]

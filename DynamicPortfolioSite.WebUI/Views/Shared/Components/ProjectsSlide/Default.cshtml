@@ -1,0 +1,25 @@
+﻿
+
+<div class="row">
+    @*@if (Model.works != null)
+    {
+        @foreach (var work in Model.works)
+        {
+            <div class="col-md-4 col-sm-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="@work.ProfileImg" data-lightbox="image-1">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h2>@work.Title</h2>
+                                    <p>@work.Description</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="image">
+                            <img src="@work.ProfileImg">
+                        </div>
+                    </div>
+                </div>
+            </div>}}*@
+</div>

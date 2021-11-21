@@ -1,4 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
 }
 
+@await Component.InvokeAsync("NavAndLogo")
+
+<div class="slides">
+    @*  Home  *@
+    <div class="slide" id="1">
+        <div class="content first-content">
+            <div class="container-fluid">
+                @await Component.InvokeAsync("HomeSlide")
+            </div>
+        </div>
+    </div>
+    @*  Hakkımda  *@
+    <div class="slide" id="2">
+        <div class="content second-content">
+            <div class="container-fluid">
+                @await Component.InvokeAsync("AboutSlide")
+            </div>
+        </div>
+    </div>
+    @* Blog Post (Medium Link)  *@
+    <div class="slide" id="3">
+        <div class="content third-content">
+            <div class="container-fluid">
+                @await Component.InvokeAsync("BlogPostSlide")
+            </div>
+        </div>
+    </div>
+    @* Projelerim  *@
+    <div class="slide" id="4">
+        <div class="content fourth-content">
+            <div class="container-fluid">
+                @await Component.InvokeAsync("ProjectsSlide")
+            </div>
+        </div>
+    </div>
+    @* İletişim *@
+    <div class="slide" id="5">
+        <div class="content fifth-content">
+            <div class="container-fluid">
+                @await Component.InvokeAsync("ContactSlide")
+            </div>
+        </div>
+    </div>
+
+</div>
