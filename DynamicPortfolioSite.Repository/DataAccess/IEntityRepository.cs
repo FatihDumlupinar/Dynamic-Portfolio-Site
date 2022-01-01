@@ -49,6 +49,7 @@ namespace DynamicPortfolioSite.Repository.DataAccess
 
         void AddAll(IEnumerable<TEntity> entity);
         Task AddAllAsync(IEnumerable<TEntity> entity);
+        Task<IEnumerable<TEntity>> AddAllAsyncReturnEntities(IEnumerable<TEntity> entity);
 
         #endregion
 

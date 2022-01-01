@@ -55,10 +55,16 @@ namespace DynamicPortfolioSite.Repository.DataAccess.EntityFramework
             return entity;
         }
 
+        public async Task<IEnumerable<TEntity>> AddAllAsyncReturnEntities(IEnumerable<TEntity> entity)
+        {
+            await _entities.AddRangeAsync(entity);
+            return entity;
+        }
+
         #endregion
 
         #region Delete
-        
+
         public void Delete(TEntity entity)
         {
             entity.IsActive = false;
@@ -154,6 +160,8 @@ namespace DynamicPortfolioSite.Repository.DataAccess.EntityFramework
             var response = await sqlcon.QueryAsync<T>(spName, dynamicParameters, commandType: CommandType.StoredProcedure);
             return response.ToList();
         }
+
+        
 
         #endregion
     }

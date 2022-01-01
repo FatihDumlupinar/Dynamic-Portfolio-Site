@@ -176,6 +176,9 @@ namespace DynamicPortfolioSite.Repository.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int>("AboutId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("CreatedByUserId")
                         .HasColumnType("integer");
 
@@ -195,6 +198,9 @@ namespace DynamicPortfolioSite.Repository.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<int>("LocalizationId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RowNumber")
                         .HasColumnType("integer");
 
                     b.Property<string>("SchoolName")
@@ -314,6 +320,9 @@ namespace DynamicPortfolioSite.Repository.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int>("AboutId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("CreatedByUserId")
                         .HasColumnType("integer");
 
@@ -356,6 +365,9 @@ namespace DynamicPortfolioSite.Repository.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int>("AboutId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("CompanyName")
                         .HasColumnType("text");
 
@@ -378,6 +390,9 @@ namespace DynamicPortfolioSite.Repository.Migrations
                         .HasColumnType("text");
 
                     b.Property<int>("LocalizationId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RowNumber")
                         .HasColumnType("integer");
 
                     b.Property<int?>("UpdatedByUserId")

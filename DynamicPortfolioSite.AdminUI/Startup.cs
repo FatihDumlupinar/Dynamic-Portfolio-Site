@@ -1,14 +1,8 @@
 using DynamicPortfolioSite.AdminUI.Resources;
-using DynamicPortfolioSite.Repository.Contexts;
-using DynamicPortfolioSite.Repository.Repositories.Interfaces;
-using DynamicPortfolioSite.Repository.Repositories.Methods;
-using DynamicPortfolioSite.Repository.UnitOfWork.Interfaces;
-using DynamicPortfolioSite.Repository.UnitOfWork.Methods;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,35 +15,20 @@ namespace DynamicPortfolioSite.AdminUI
 {
     public class Startup
     {
+        #region Ctor&Fields
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; } 
+
+        #endregion
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services
-               .AddDbContext<AppDbContext>(optionsAction: 
-               options => options.UseNpgsql(Configuration.GetConnectionString("AppDbConnection")));
-
-            #region Repositories & UnitOfWork Dependency
-
-            services.AddTransient<IAboutRepository, AboutRepository>();
-            services.AddTransient<IProjectRepository, ProjectRepository>();
-            services.AddTransient<IProjectAndCategoryRepository, ProjectAndCategoryRepository>();
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<IContactRepository, ContactRepository>();
-            services.AddTransient<IBlogPostRepository, BlogPostRepository>();
-            services.AddTransient<IWorkRepository, WorkRepository>();
-            services.AddTransient<ISkillRepository, SkillRepository>();
-            services.AddTransient<IEducationRepository, EducationRepository>();
-            services.AddTransient<IAppUserRepository, AppUserRepository>();
-
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
-
-            #endregion
+            #region Localization Config & AddControllersWithViews
 
             services.AddLocalization();
 
@@ -63,8 +42,6 @@ namespace DynamicPortfolioSite.AdminUI
                         return factory.Create("SharedResource", assemblyName.Name);
                     };
                 });
-
-            #region Localization Config
 
             services.Configure<RequestLocalizationOptions>(
                    options =>
