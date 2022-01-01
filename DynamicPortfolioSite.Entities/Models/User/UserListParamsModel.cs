@@ -8,4 +8,3 @@ namespace DynamicPortfolioSite.Entities.Models.User
         public DateTime CreateDateRange_End { get; set; }
     }
 }
-}
